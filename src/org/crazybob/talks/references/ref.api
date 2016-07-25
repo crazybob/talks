@@ -1,0 +1,23 @@
+public abstract class Reference<T> {
+  public T get() { ... }
+}
+
+public class SoftReference<T> extends Reference<T> {
+  public SoftReference(T referent) { ... }
+  public SoftReference(T referent, ReferenceQueue<? super T> q) { ... }
+}
+
+public class WeakReference<T> extends Reference<T> {
+  public WeakReference(T referent) { ... }
+  public WeakReference(T referent, ReferenceQueue<? super T> q) { ... }
+}
+
+public class PhantomReference<T> extends Reference<T> {
+  public PhantomReference(T referent, ReferenceQueue<? super T> q) { ... }
+}
+
+public class ReferenceQueue<T> {
+  public ReferenceQueue() { ... }
+  public Reference<? extends T> poll() { ... }
+  public Reference<? extends T> remove() { ... }
+}
